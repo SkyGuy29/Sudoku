@@ -174,7 +174,7 @@ bool backtrackSolve(int grid[][9], int coord)
                 std::cout << coord << std::endl;
 
                 if(isSafe(grid, coord / 9, coord % 9, count))
-                    if (backtrackSolve(grid, coord + 1) || coord == 80)
+                    if (coord >= 80 || backtrackSolve(grid, coord + 1))
                         return true;
             }
         }
